@@ -96,7 +96,7 @@ const NavbarMain = () => {
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="/" className="logo d-flex align-items-center">
         <img src={logo} alt="" />
-        <span>TVD SOFTWARE</span>
+        <span>TVD SOFTWARE Solution</span>
       </a>
 
       <nav id="navbar" className="navbar">
