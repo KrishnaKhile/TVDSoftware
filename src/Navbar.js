@@ -6,10 +6,19 @@ import {FaBars,FaArrowUp} from "react-icons/fa";
 // import Navbar from "react-bootstrap/Navbar";
 // import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link, useLocation } from "react-router-dom";
-const NavbarMain = () => {
+const NavbarMain = ({headscrolled}) => {
+
+
   const location = useLocation();
   const[navToggle,setNavToggle]=useState('');
 const [showNav,setShowNav]=useState(false);
+
+
+
+
+// console.log(headscrolled)
+
+
 
   return (
     <>
@@ -95,7 +104,7 @@ const [showNav,setShowNav]=useState(false);
         </Navbar>
       ))} */}
 
-<header id="header" className="header fixed-top">
+<header id="header" className={`header fixed-top ${headscrolled}`}>
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="/" className="logo d-flex align-items-center">
         <img src={logo} alt="" />

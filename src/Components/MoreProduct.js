@@ -2,13 +2,81 @@ import React from 'react'
 import { Button } from "react-bootstrap";
 import lmsimg from "../assets/img/lmsimg.png";
 import webhosting from "../assets/img/webhosting.png";
-
+import down from "../assets/img/down.png";
+import up from "../assets/img/up.png";
+import cmsimg from "../assets/img/cmsimg.png";
+import dllimg from "../assets/img/dllimg.png";
 const MoreProduct = () => {
-
+  const [show, toggleShow] = React.useState(false);
   return (
     <>
-      {/* Library managemant system */}
-      <div className="container our-product-odd">
+<div className="why-tvd-text">Our Products</div>
+
+{/* College management system */}
+<div className="container aos-init aos-animate" data-aos="fade-up">
+  <div className="row">
+    <div
+      className="col-md App-logo aos-init aos-animate"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <img className="main-image" src={cmsimg} alt="" />
+    </div>
+    <div
+      className="col-md aos-init aos-animate"
+      style={{ margin: "auto" }}
+      data-aos="fade-up"
+      data-aos-delay="400"
+    >
+      <div className="main-heading">
+        <p> "College Management System"</p>
+      </div>
+      <div className="main-content">
+        <p>
+          A college management system is a cloud based educational ERP
+          software that enables HEIs to manage online admission & fees,
+          students' attendance, library books, etc. It can also generate
+          students' performance reports & simplify the hassles of faculty.
+        </p>
+      </div>
+
+      <div className="btnc">
+        <Button className="btn-more">Get Demo</Button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* Digital language lab */}
+<div className="container our-product-even">
+  <div className="row row-reverse">
+    <div className="col-md App-logo">
+      <img className="main-image" src={dllimg} alt="" />
+    </div>
+    <div className="col-md" style={{ margin: "auto" }}>
+      <div className="main-heading">
+        <p> "Digital Language Lab"</p>
+      </div>
+      <div className="main-content">
+        <p>
+          Digital language laboratory is software that make learning more
+          interactive for student. It enhances speaking, listening and
+          speaking skills. The interactive digital platform improves
+          language grammar while making learning effective and
+          interesting.
+        </p>
+      </div>
+      <div className="btnc">
+        <Button className="btn-more">Get Demo</Button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  {show && <>
+  {/* Library managemant system */}
+  <div className="container our-product-odd">
         <div className="row">
           <div className="col-md App-logo">
             <img className="main-image" src={lmsimg} alt="" />
@@ -48,6 +116,30 @@ const MoreProduct = () => {
           </div>
         </div>
       </div>
+  </>}
+  <p onClick={() => toggleShow(!show)}>
+    {" "}
+    {show ? (
+      <>
+        <b> Less Products</b> <br />{" "}
+        <img alt="Less Product" className="up-img" src={up} />
+      </>
+    ) : (
+      <>
+        <img alt="More Product" className="down-img" src={down} />
+        <br />
+        <b> More Products</b>
+      </>
+    )}
+  </p>
+</div>
+
+
+
+
+
+
+      
 
 
     </>

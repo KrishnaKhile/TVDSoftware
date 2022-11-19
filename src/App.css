@@ -37,8 +37,8 @@
   width: 100% !important;
   height: 100% !important;
   background: transparent !important;
-  transition: 0.3s; 
-   animation: slideIn 1.5s ease-in-out forwards;
+  /* transition: 0.3s; 
+   animation: slideIn 1.5s ease-in-out forwards; */
 
 }
 
@@ -83,6 +83,7 @@
 
 .why-tvd-content{
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .why-img{
@@ -121,8 +122,8 @@
   color: #012970;
   font-weight: 600 !important;
   font-size: calc(1.100rem + 1.4vw) !important;
-  transform: translateY(180px);
-    animation: slideUp .8s ease forwards .5s;
+  /* transform: translateY(180px);
+    animation: slideUp .8s ease forwards .5s; */
     overflow: hidden;
 }
 
@@ -225,8 +226,8 @@
 
 .main-content > p{
   font-weight: 20px !important;
-  transform: translateY(300px); 
-  animation: slideUp .8s ease-in-out forwards .8s;
+  /* transform: translateY(300px); 
+  animation: slideUp .8s ease-in-out forwards .8s; */
 }
 
 .btnc{
@@ -235,8 +236,8 @@
 }
 
 .btn-more{
-  transform: translateY(50px);
-  animation: slideUp .8s ease-in-out  forwards 1s;
+  /* transform: translateY(50px);
+  animation: slideUp .8s ease-in-out  forwards 1s; */
 }
 
 
