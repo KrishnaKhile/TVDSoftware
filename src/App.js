@@ -9,6 +9,8 @@ import About from './Components/About';
 import ContactUs from './Components/ContactUs';
 import Footer from './Components/Footer';
 import SocialIcon from './Components/SocialIcon';
+// import Aos from './assets/aos/aos';
+
 function App() {
   return (
     <div className="App">
@@ -38,6 +40,7 @@ function App() {
         </Route> */}
       </Routes>
       <Footer/> 
+{/* <Aos/> */}
     </div>
   );
 }

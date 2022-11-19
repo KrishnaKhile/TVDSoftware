@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./TVD_LOGO.png";
 import {FaBars,FaArrowUp} from "react-icons/fa";
 // import Container from "react-bootstrap/Container";
@@ -8,6 +8,9 @@ import {FaBars,FaArrowUp} from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 const NavbarMain = () => {
   const location = useLocation();
+  const[navToggle,setNavToggle]=useState('');
+const [showNav,setShowNav]=useState(false);
+
   return (
     <>
       {/* {["lg"].map((expand) => (
@@ -99,18 +102,15 @@ const NavbarMain = () => {
         <span>TVD SOFTWARE</span>
       </a>
 
-      <nav id="navbar" className="navbar">
+      <nav id="navbar" className={`navbar ${navToggle}`}>
         <ul>
-          <li><Link  className={location.pathname === "/" ? "nav-link scrollto active" : "nav-link scrollto"} to="/">Home</Link></li>
-          <li><Link className={location.pathname === "/careers" ? "nav-link scrollto active" : "nav-link scrollto"}  to="/careers">Careers</Link></li>
-          <li><a className="nav-link scrollto" href="/">About Us</a></li>
-          <li><a className="nav-link scrollto" href="/">Contact Us</a></li>
-          {/* <li><a className="nav-link scrollto" href="">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a className="nav-link scrollto" href="">Contact</a></li> */}
+          <li><Link  className={location.pathname === "/" ? "nav-link scrollto active" : "nav-link scrollto"} to="/" onClick={()=>setNavToggle("")}>Home</Link></li>
+          <li><Link className={location.pathname === "/careers" ? "nav-link scrollto active" : "nav-link scrollto"}  to="/careers" onClick={()=>setNavToggle("")}>Careers</Link></li>
+          <li><Link className={location.pathname === "/about" ? "nav-link scrollto active" : "nav-link scrollto"} to="/about" onClick={()=>setNavToggle("")}>About Us</Link></li>
+          <li><Link className={location.pathname === "/contact-us" ? "nav-link scrollto active" : "nav-link scrollto"} to="/contact-us" onClick={()=>setNavToggle("")} href="/">Contact Us</Link></li>
           
-        </ul> 
-        <FaBars className="bi mobile-nav-toggle bi-list"/>
+        </ul> <i onClick={()=>setShowNav(!showNav)}>{showNav ? <><FaBars className="mobile-nav-toggle" onClick={()=>setNavToggle("navbar-mobile")} /></> : <><FaBars className="mobile-nav-toggle" onClick={()=>setNavToggle("navbar-mobile")} /></>}
+        </i>
       </nav>
 
     </div>
