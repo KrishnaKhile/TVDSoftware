@@ -9,11 +9,11 @@ import dllimg from "../assets/img/dllimg.png";
 const MoreProduct = ({scrollPosition}) => {
   const [show, toggleShow] = useState(false);
 
-console.log(scrollPosition)
+// console.log(scrollPosition)
 
 const [product,setProduct] = useState('')
 useEffect(()=>{
-if(scrollPosition >= 700){
+if(scrollPosition >= 500){
 setProduct('aos-init aos-animate')
 }
 else {
@@ -23,7 +23,7 @@ else {
 
   return (
     <>
-    
+
 <div className={`why-tvd-text ${product}`} data-aos="fade-up">Our Products</div>
 
 {/* College management system */}

@@ -6,8 +6,9 @@ import graph from "../assets/img/graph.png";
 import support from "../assets/img/support.png";
 import trust from "../assets/img/trust.png";
 import MoreProduct from "./MoreProduct";
-
-
+import { EmojiSmile, JournalRichtext,  People } from "react-bootstrap-icons";
+import {FaRegThumbsUp} from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const Home = ({ scrollPosition }) => {
   const [hero,setHero]=useState('')
@@ -31,7 +32,7 @@ const Home = ({ scrollPosition }) => {
 
   return (
     <>
-      <section id="hero" className="hero d-flex align-items-center">
+      <section id="hero" className="hero d-flex align-items-center" >
         <div className="container" >
           <div className="row row-reverse">
             <div className={`col-md App-logo ${hero}`} data-aos="zoom-out">
@@ -55,7 +56,7 @@ const Home = ({ scrollPosition }) => {
                 </p>
               </div>
               <div className={`btnc ${hero}`} data-aos="fade-up" data-aos-delay="350">
-                <Button className="btn-more">Contact Us</Button>
+                <Link to="/contact-us" className="btn btn-primary btn-more">Contact Us</Link>
               </div>
             </div>
           </div>
@@ -120,22 +121,21 @@ const Home = ({ scrollPosition }) => {
       <div className={`container ${why}`} data-aos="fade-up">
 
         <div className="row gy-4">
-
           <div className="col-lg-3 col-md-6">
             <div className="count-box">
-              <i className="bi bi-emoji-smile"></i>
+              <i className="bi bi-emoji-smile"> <EmojiSmile/> </i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter"></span>
-                <p>Happy Clients</p>
+                <span className="purecounter">344</span>
+                <p>  Happy Clients</p>
               </div>
             </div>
           </div>
 
           <div className="col-lg-3 col-md-6">
             <div className="count-box">
-              <i className="bi bi-journal-richtext" style={{color:"#ee6c20"}}></i>
+              <i className="bi bi-journal-richtext" style={{color:"#ee6c20"}}> <JournalRichtext/> </i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter"></span>
+                <span  className="purecounter">45</span>
                 <p>Projects</p>
               </div>
             </div>
@@ -143,20 +143,20 @@ const Home = ({ scrollPosition }) => {
 
           <div className="col-lg-3 col-md-6">
             <div className="count-box">
-              <i className="bi bi-headset" style={{color:"#15be56"}}></i>
+              <i className="bi bi-headset" style={{color:"#15be56"}}> <FaRegThumbsUp/> </i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" className="purecounter"></span>
-                <p>Hours Of Support</p>
+                <span className="purecounter">6</span>
+                <p>Years in Business</p>
               </div>
             </div>
           </div>
 
           <div className="col-lg-3 col-md-6">
             <div className="count-box">
-              <i className="bi bi-people" style={{color:"#bb0852"}}></i>
+              <i className="bi bi-people" style={{color:"#bb0852"}}> <People/> </i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" className="purecounter"></span>
-                <p>Hard Workers</p>
+                <span className="purecounter">25</span>
+                <p>Total Employee</p>
               </div>
             </div>
           </div>
