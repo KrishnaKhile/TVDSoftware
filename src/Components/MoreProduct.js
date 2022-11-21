@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from "react-bootstrap";
 import lmsimg from "../assets/img/lmsimg.png";
 import webhosting from "../assets/img/webhosting.png";
@@ -6,18 +6,31 @@ import down from "../assets/img/down.png";
 import up from "../assets/img/up.png";
 import cmsimg from "../assets/img/cmsimg.png";
 import dllimg from "../assets/img/dllimg.png";
-const MoreProduct = () => {
-  const [show, toggleShow] = React.useState(false);
+const MoreProduct = ({scrollPosition}) => {
+  const [show, toggleShow] = useState(false);
+
+console.log(scrollPosition)
+
+const [product,setProduct] = useState('')
+useEffect(()=>{
+if(scrollPosition >= 700){
+setProduct('aos-init aos-animate')
+}
+else {
+  setProduct('')
+}
+},[scrollPosition])
+
   return (
     <>
-<div className="why-tvd-text">Our Products</div>
+    
+<div className={`why-tvd-text ${product}`} data-aos="fade-up">Our Products</div>
 
 {/* College management system */}
-<div className="container aos-init aos-animate" data-aos="fade-up">
+<div className={`container ${product}`} data-aos="fade-up">
   <div className="row">
     <div
-      className="col-md App-logo aos-init aos-animate"
-      data-aos="fade-up"
+      className={`col-md App-logo ${product}`} data-aos="fade-up"
       data-aos-delay="200"
     >
       <img className="main-image" src={cmsimg} alt="" />
@@ -48,7 +61,7 @@ const MoreProduct = () => {
 </div>
 
 {/* Digital language lab */}
-<div className="container our-product-even">
+<div className="container our-product-even" >
   <div className="row row-reverse">
     <div className="col-md App-logo">
       <img className="main-image" src={dllimg} alt="" />

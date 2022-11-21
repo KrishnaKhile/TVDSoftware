@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./TVD_LOGO.png";
 import {FaBars,FaArrowUp} from "react-icons/fa";
 // import Container from "react-bootstrap/Container";
@@ -6,7 +6,20 @@ import {FaBars,FaArrowUp} from "react-icons/fa";
 // import Navbar from "react-bootstrap/Navbar";
 // import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link, useLocation } from "react-router-dom";
-const NavbarMain = ({headscrolled}) => {
+const NavbarMain = ({scrollPosition}) => {
+  
+  const [head,setHead]=useState('');
+ 
+  useEffect(()=>{
+    if(scrollPosition >= 100){
+      setHead('header-scrolled')
+    }
+    else {
+      setHead('')
+    }
+  },[scrollPosition])
+  
+
 
 
   const location = useLocation();
@@ -104,7 +117,7 @@ const [showNav,setShowNav]=useState(false);
         </Navbar>
       ))} */}
 
-<header id="header" className={`header fixed-top ${headscrolled}`}>
+<header id="header" className={`header fixed-top ${head}`}>
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="/" className="logo d-flex align-items-center">
         <img src={logo} alt="" />

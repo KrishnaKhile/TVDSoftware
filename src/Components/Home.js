@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import homeimage from "../assets/img/homeimage.png";
 
@@ -6,14 +6,32 @@ import graph from "../assets/img/graph.png";
 import support from "../assets/img/support.png";
 import trust from "../assets/img/trust.png";
 import MoreProduct from "./MoreProduct";
-const Home = ({ hero, why }) => {
-  
 
-  console.log(why);
+
+
+const Home = ({ scrollPosition }) => {
+  const [hero,setHero]=useState('')
+  const [why,setWhy]=useState('')
+  useEffect(()=>{
+    if(scrollPosition >= 100){
+      setWhy('aos-init aos-animate')
+    }
+    else {
+      setWhy('')
+    }
+    if(scrollPosition < 400){
+      setHero('aos-init aos-animate')
+    }
+    else {
+      setHero('')
+    }
+  },[scrollPosition])
+
+  // console.log(why);
 
   return (
     <>
-      <section id="hero" class="hero d-flex align-items-center">
+      <section id="hero" className="hero d-flex align-items-center">
         <div className="container" >
           <div className="row row-reverse">
             <div className={`col-md App-logo ${hero}`} data-aos="zoom-out">
@@ -95,10 +113,60 @@ const Home = ({ hero, why }) => {
           </div>
         </div>
       </div>
-      {/* <svg viewBox="0 0 1366 631" width="100%" height="70vmin" class="_dkkao8NaN" preserveAspectRatio="none" aria-hidden="true"><path d="M1366 614.626V42.2878C1216.44 32.481 1071.16 25.6274 902.892 20.0618C647.674 11.6203 291.457 3.37253 0 0.135254V612.111C313.572 631.987 694.403 637.367 1189.78 619.86C1248.63 617.783 1307.48 616.071 1366 614.626Z" fill="#e5f6fe"></path>
-</svg> */}
 
-      <MoreProduct/>
+      <MoreProduct scrollPosition={scrollPosition} />
+
+      <section id="counts" className="counts">
+      <div className={`container ${why}`} data-aos="fade-up">
+
+        <div className="row gy-4">
+
+          <div className="col-lg-3 col-md-6">
+            <div className="count-box">
+              <i className="bi bi-emoji-smile"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <div className="count-box">
+              <i className="bi bi-journal-richtext" style={{color:"#ee6c20"}}></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <div className="count-box">
+              <i className="bi bi-headset" style={{color:"#15be56"}}></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" className="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <div className="count-box">
+              <i className="bi bi-people" style={{color:"#bb0852"}}></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" className="purecounter"></span>
+                <p>Hard Workers</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
 
       <div className="why-tvd-text">Our Clients</div>
     </>

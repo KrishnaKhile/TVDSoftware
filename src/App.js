@@ -18,7 +18,7 @@ const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
 };
-console.log(scrollPosition)
+// console.log(scrollPosition)
 useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -28,35 +28,13 @@ useEffect(() => {
 }, []);
 
 
-const [head,setHead]=useState('');
-const [hero,setHero]=useState('')
-const [why,setWhy]=useState('')
-useEffect(()=>{
-  if(scrollPosition >= 100){
-    setHead('header-scrolled')
-    setWhy('aos-init aos-animate')
-  }
-  else {
-    setHead('')
-    setWhy('')
-  }
-
-
-  if(scrollPosition < 400){
-    setHero('aos-init aos-animate')
-  }
-  else {
-    setHero('')
-  }
-},[scrollPosition])
-console.log(why)
 
   return (
     <div className="App">
-            <NavbarMain headscrolled={head} />
+            <NavbarMain scrollPosition={scrollPosition} />
             <SocialIcon/>
             <Routes>
-        <Route path="/" element={<Home hero={hero} why={why} />} />
+        <Route path="/" element={<Home scrollPosition={scrollPosition} />} />
          <Route path="/careers" element={<Careers />} />
        <Route
           path="/about"
